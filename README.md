@@ -62,4 +62,10 @@ run unit tests
 
 ```
 make unit
+``` 
+
+run behat tests
+
 ```
+make behat
+``` 

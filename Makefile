@@ -1,6 +1,6 @@
 .DEFAULT_GOAL:=help
 
-REGEX = '(?<=\DB_VOLUME_NAME=)[a-zA-Z0-9\.-]*'
+REGEX = '(?<=\DB_VOLUME_NAME=)[a-zA-Z0-9\._-]*'
 VOLUME := $(shell cat docker/.env | grep -oP ${REGEX})
 
 .PHONY: build
@@ -38,3 +38,7 @@ test:
 .PHONY: unit
 unit:
 	cd docker && docker-compose run --rm php-fpm sh -c 'composer test:unit'
+
+.PHONY: behat
+behat:
+	cd docker && docker-compose run --rm php-fpm sh -c 'composer test:behat'

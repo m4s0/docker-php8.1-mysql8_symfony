@@ -75,3 +75,9 @@ make behat
 ```
 make cs
 ``` 
+
+#### Static Code Analysis
+
+```
+make stan
+``` 

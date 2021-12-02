@@ -69,3 +69,9 @@ run behat tests
 ```
 make behat
 ``` 
+
+#### Coding Standards
+
+```
+make cs
+``` 

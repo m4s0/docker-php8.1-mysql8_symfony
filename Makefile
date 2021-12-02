@@ -42,3 +42,7 @@ unit:
 .PHONY: behat
 behat:
 	cd docker && docker-compose run --rm php-fpm sh -c 'composer test:behat'
+
+.PHONY: cs
+cs:
+	cd docker && docker-compose run --rm php-fpm sh -c 'vendor/bin/php-cs-fixer fix --no-interaction --diff --verbose'

@@ -4,7 +4,7 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
-        "php": ">=8",
+        "php": ">=8.1",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "symfony/config": "5.4.*",
@@ -29,7 +29,8 @@
         "laminas/laminas-code": "4.5.x-dev",
         "phpunit/phpunit": "^9.5",
         "symfony/browser-kit": "5.4.*",
-        "symfony/css-selector": "5.4.*"
+        "symfony/css-selector": "5.4.*",
+        "friendsofphp/php-cs-fixer": "^3.3"
     },
     "config": {
         "optimize-autoloader": true,
@@ -65,14 +66,13 @@
         "post-update-cmd": [
             "@auto-scripts"
         ],
-        "cs": "vendor/bin/php-cs-fixer fix --no-interaction --diff --verbose",
-        "stan": "vendor/bin/phpstan analyse --memory-limit=-1",
         "test": [
             "@test:unit",
             "@test:behat"
         ],
         "test:unit": "vendor/bin/phpunit --testdox --exclude-group=none --colors=always",
-        "test:behat": "vendor/bin/behat"
+        "test:behat": "vendor/bin/behat",
+        "cs": "vendor/bin/php-cs-fixer fix --no-interaction --diff --verbose"
     },
     "conflict": {
         "symfony/symfony": "*"

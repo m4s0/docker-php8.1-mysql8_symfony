@@ -50,5 +50,4 @@ services:
 
 volumes:
   db_data:
-    external: true
     name: ${DB_VOLUME_NAME}

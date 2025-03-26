@@ -7,36 +7,20 @@
         "php": ">=8.1",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "symfony/config": "5.4.*",
-        "symfony/console": "5.4.*",
-        "symfony/dependency-injection": "5.4.*",
-        "symfony/dotenv": "5.4.*",
-        "symfony/flex": "^1.17|^2",
-        "symfony/framework-bundle": "5.4.*",
-        "symfony/http-foundation": "5.4.*",
-        "symfony/http-kernel": "5.4.*",
-        "symfony/runtime": "5.4.*",
-        "symfony/yaml": "5.4.*"
+        "symfony/console": "6.3.*",
+        "symfony/dotenv": "6.3.*",
+        "symfony/flex": "^2",
+        "symfony/framework-bundle": "6.3.*",
+        "symfony/runtime": "6.3.*",
+        "symfony/yaml": "6.3.*"
     },
     "require-dev": {
-        "behat/behat": "^3.10",
-        "behatch/contexts": "^3.3",
-        "coduo/php-matcher": "^6.0",
-        "friends-of-behat/mink": "^1.9",
-        "friends-of-behat/mink-browserkit-driver": "^1.5",
-        "friends-of-behat/mink-extension": "^2.5",
-        "friends-of-behat/symfony-extension": "^2.2",
-        "laminas/laminas-code": "4.5.x-dev",
-        "phpunit/phpunit": "^9.5",
-        "symfony/browser-kit": "5.4.*",
-        "symfony/css-selector": "5.4.*",
-        "friendsofphp/php-cs-fixer": "^3.3",
-        "phpstan/phpstan": "^1.2"
     },
     "config": {
-        "optimize-autoloader": true,
-        "preferred-install": {
-            "*": "dist"
+        "allow-plugins": {
+            "php-http/discovery": true,
+            "symfony/flex": true,
+            "symfony/runtime": true
         },
         "sort-packages": true
     },
@@ -47,14 +31,17 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/",
-            "App\\Tests\\Behat\\": "features/Contexts/"
+            "App\\Tests\\": "tests/"
         }
     },
     "replace": {
         "symfony/polyfill-ctype": "*",
         "symfony/polyfill-iconv": "*",
-        "symfony/polyfill-php72": "*"
+        "symfony/polyfill-php72": "*",
+        "symfony/polyfill-php73": "*",
+        "symfony/polyfill-php74": "*",
+        "symfony/polyfill-php80": "*",
+        "symfony/polyfill-php81": "*"
     },
     "scripts": {
         "auto-scripts": {
@@ -66,15 +53,7 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
-        ],
-        "test": [
-            "@test:unit",
-            "@test:behat"
-        ],
-        "test:unit": "vendor/bin/phpunit --testdox --exclude-group=none --colors=always",
-        "test:behat": "vendor/bin/behat",
-        "cs": "vendor/bin/php-cs-fixer fix --no-interaction --diff --verbose",
-        "stan": "vendor/bin/phpstan analyse --memory-limit=-1"
+        ]
     },
     "conflict": {
         "symfony/symfony": "*"
@@ -82,7 +61,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "5.4.*"
+            "require": "6.3.*"
         }
     }
 }

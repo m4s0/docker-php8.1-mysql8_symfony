@@ -1,6 +1,6 @@
 # Application
 
-Application runs with PHP 8.1 and MySQL 8
+Application runs with PHP 8.2 and Postgres:16.0
 
 #### Docker
 
